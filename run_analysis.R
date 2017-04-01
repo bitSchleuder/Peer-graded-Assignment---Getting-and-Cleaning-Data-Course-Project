@@ -11,7 +11,6 @@
 # Cleanup
 rm(list=ls());
 # load libraries
-library(reshape2);
 library(plyr);
 
 # set up base variables
@@ -35,9 +34,9 @@ setwd(wdPath);
 
 #
 # read all file data
-features <- read.table('./features.txt',header=FALSE)
+features <- read.table('./features.txt',header=FALSE);
 # coerc features to character
-features$V2 <- as.character(features$V2)
+features$V2 <- as.character(features$V2);
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- features[grep(".*mean.*|.*std.*", features$V2),];
 
